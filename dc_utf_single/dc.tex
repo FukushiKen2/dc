@@ -1,0 +1,268 @@
+%\documentclass[11pt,a4paper,uplatex,dvipdfmx]{ujarticle} 		% for uplatex
+\documentclass[11pt,a4j,dvipdfmx]{jarticle} 					% for platex
+\input{pieces/form00_header} % pieces
+\input{pieces/kakenhi7} % pieces
+\input{pieces/form01_dcpd_header} % pieces
+\input{pieces/hook3} % pieces
+%#Name: dc
+\input{pieces/form03_dcpd_headers} % pieces
+\input{pieces/form04_dc_header} % pieces
+% ===== Global definitions for the Kakenhi form ======================
+%　基本情報
+%
+%------ 研究課題名  -------------------------------------------
+\newcommand{\研究課題名}{象の卵}
+
+%----- 研究機関名と研究代表者の氏名-----------------------
+\newcommand{\研究機関名}{京都大学}
+\newcommand{\研究代表者氏名}{福士謙二}
+\newcommand{\me}{\underline{\underline{H.~Yukawa}}}
+\input{pieces/inst_dcpd} % pieces
+% user07_header
+% ===== my favorite packages ====================================
+% ここに、自分の使いたいパッケージを宣言して下さい。
+\usepackage{wrapfig}
+%\usepackage{amssymb}
+%\usepackage{mb}
+%\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{lineno}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{amsthm}
+
+% ===== my personal definitions ==================================
+% ここに、自分のよく使う記号などを定義して下さい。
+\newcommand{\klpionn}{K_L \to \pi^0 \nu \overline{\nu}}
+\newcommand{\kppipnn}{K^+ \to \pi^+ \nu \overline{\nu}}
+
+% ----- 業績リスト用 -------------
+\newcommand{\paper}[6]{%
+	% paper{title}{authors}{journal}{vol}{pages}{year}
+	\item ``#1'', #2, #3 {\bf #4}, #5 (#6).			% お好みに合わせて変えてください。
+}
+
+\newcommand{\etal}{\textit{et al.\ }}
+\newcommand{\ca}[1]{*#1}	% corresponding author;   \ca{\yukawa}  みたいにして使う
+\newcommand{\invitedtalk}{招待講演}
+
+\newcommand{\yukawa}{H.~Yukawa}					% no underline
+%\newcommand{\yukawa}{\underline{\underline{H.~Yukawa}}}	% with 2 underlines
+\newcommand{\tomonaga}{S.~Tomonaga}
+
+\newcommand{\prl}{Phys.\ Rev.\ Lett.\ }		% よく使う雑誌も定義すると楽
+
+% ===== 欄外メモ ==================
+\newcommand{\memo}[1]{\marginpar{#1}}
+%\renewcommand{\memo}[1]{}	% 全てのメモを表示させないようにするには、行頭の"%"を消す
+
+%\input{../../sample/simple/contents}	% skip
+\input{pieces/hook5} % pieces
+
+\begin{document}
+\input{pieces/hook7} % pieces
+%#Split: 01_background
+%#PieceName: p01_background
+\input{pieces/p01_background_00}
+\section{研究の位置づけ}
+%　　　　＜＜最大　1ページ＞＞
+
+%s03_background
+%begin 本研究の着想に至った経緯など ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\noindent\Large
+\textbf{研究テーマはSergei Novikovにより始められたclosed 1-formのゼロ点を調べるモース理論の一般化の理論の拡張である}
+
+\normalsize
+\vspace{2mm}
+			- モース関数の代わりにclosed 1-formのゼロ点を扱うMorse Novikov理論の境界付き多様体への一般化
+
+
+		- 特異点を持つ空間へのMorse Novikov理論を用いた新しいアプローチ
+
+
+			- フレアーホモロジー等無限次元モース理論においてのNovikov理論のアナロジーとなる汎関数の開発
+
+
+\vspace{4mm}
+\noindent\Large
+ \textbf{Morse Novikov理論とは}\normalsize
+\vspace{2mm}
+
+	多様体のトポロジーをモース関数を用いて調べるモース理論は古くからトポロジーにおいて最も重要な理論の一つであり，フレアーホモロジー等への一般化などその影響力は現在においても健在である．Novikovは\textbf{ゼロ点の近傍でモース関数の外微分と同じ形をしているclosed 1-form(以下Morse 1-formと呼ぶ)のゼロ点を調べること}を提唱した．モース関数$f$に対し$df$のゼロ点と$f$の臨界点は一致するためNovikovの理論はモース理論の一般化になっている．モース理論との一番の違いはgradient flowの挙動である．このflowの複雑さがより深い結果を導き出す．リーマン計量を通じて1-formとベクトル場のカノニカルな同型が存在するので（関数の勾配の一般化）そのベクトル場に対する負の方向のflowをgradient flowと呼ぶ．モース理論の場合flowに沿って関数の値は単調に減少する．Edward Wittenはモース関数の臨界点を生成元とするチェイン複体で，指数の差が１の臨界点を結ぶflowの本数を微分の係数とするホモロジー理論を構築した．closed 1-formの場合flowの挙動は簡単でなく，ホモロジー理論を作ろうにも臨界点を結ぶflowは無限に存在することがある．flowたちを基本群と整数環の群環を完備化したノビコフ環とよばれる形式的無限和に対応させ数え上げることでこの問題を解決し，Novikov環係数のホモロジー理論が作られた．この手法はゲージ理論，シンプレクティック幾何での無限次元の状況下でflowを数え上げる際の下地になっている．さらに３次元多様体上でCircle Valued Morse関数$（f:M \rightarrow S^1$のモース理論で，$[df]\in H^1(M,\mathbb{Z})$の時に対応）が作るNovikov複体のReidemeister torsionとゲージ理論のサイバーグウィッテン不変量が等価であるという予想がHutchingsにより提出された．flowに関連する別の話題としてLS categoryの一般化がある．それはコホモロジー$\xi \in H^1(M,\mathbb{R})$にゼロ以上の数$cat(M,\xi)$を定義するものである．古典的なLS categoryの有名な結果に閉多様体上の関数は$cat(M)$以上の臨界点を持つという結果があるが，Michael FarberはMorseでなく一般のclosed 1-form  $\omega$のゼロ点が$cat(M,[\omega])$未満ならば任意のflowはhomoclinic cycleを持つという力学系の非常に興味深い結果を証明した．flowに関する話題以外にも，Morse 1-formが調和形式になる計量が存在する条件や葉層構造の理論への応用などこの理論は非常に広範な話題を持つ．申請者はこれらの結果を境界付き多様体への拡張をするつもりである．flowが境界に対しtransversalな場合の拡張の結果はいくつか存在するが，境界に対しtangentな状況の拡張はほぼ存在しない．境界に対しtangentなモース理論はAkaho manabuやKronheimerがモデルを提示しており，それらはラグランジュ交差の理論やモノポールフレアー理論への応用が見込める．この状況下でMorse Novikov理論を展開しさらに深い結果が得られることを期待する．
+
+\vspace{4mm}
+\noindent\Large
+	\textbf{着想の経緯}\normalsize
+	\vspace{2mm}
+
+	申請者がよく勉強した数学の分野は微分幾何学，モース理論，調和積分論，特性類であり，その流れで指導教官に勧められ修士でMichael FarberのThe topology of closed 1-formを通読した．そしてこの理論はモース不等式，調和積分論，Reidemeister torsion，LS category等の華々しい幾何学の結果たちを精緻な結果で蘇らせ，さらに無限次元モース理論の土台となる意義深い理論であると確信し研究を決意するに至った．
+
+%end 本研究の着想に至った経緯など ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\input{pieces/p01_background_01}
+
+%#Split: 02_purpose_plan
+%#PieceName: p02_purpose_plan
+\input{pieces/p02_purpose_plan_00}
+\section{研究目的・内容等}
+%　　　　＜＜最大　2ページ＞＞
+
+%s02_purpose_plan_dcpd
+%begin 研究目的と研究計画short留意事項なし ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\noindent
+\textbf{研究目的}
+
+Morse Novikov理論を閉多様体以外，境界や特異点をもつ多様体や無限次元モース理論に対して拡張し多様体のより精密な不変量を与えたり，多様体上の新たな解析のテクニックを開発することが研究の目的である．
+
+
+\noindent
+\textbf{Morse Novikov理論の適用範囲}
+
+Morse novikov理論について前項ではこの理論を用いた成果について多く挙げたが，研究内容の前にそもそもの理論の始まりや特性について述べたい．Sergei Novikovが始めたこの理論は多価関数に対してのモース関数の一般化が念頭にあった．複素平面上の多価関数は被覆空間を考えることで一価関数にすることができた．closed 1-formもしかるべき被覆空間へ引き戻せばexact formになることから，exactでないclosed 1-formを多価関数を外微分したような対象と捉える．複素関数の多価関数は経路が重要であったように，closed 1-formも経路により．これが前述のflowの複雑さの要因である．
+
+\noindent
+\textbf{研究内容}
+
+まずはMorse Novikov理論を境界付き多様体に拡張したい．境界についてflowがtransverseな状況についての拡張は[1],[2]が主だった結果である．この[1]，[2]に相当する結果がflowがtangentな状況下でも得られないか考えたい．
+
+
+[1]ではMorse Novikov理論をを多様体$M$と境界上のflowが出ていく集合$B$(conleyのexit setにあたる)に対し$(M,B)$の相対ホモロジーの結果に拡張している．一番重要な事実は境界付き多様体においてもNovikov複体が構成されることである．flowがtangentな場合でも同じようにNovikov複体の構成を行いたい．[3]はflowがtangentなモース理論ラグランジュフレアーホモロジーへの応用が示唆されてろり，
+
+
+[2]では相対ホモロジーのベッチ数を用いたモース不等式をWitten deformationと呼ばれる手法で証明している．Witten deformationとは，モース関数$f$を用いて外微分を$e^{-tf}de^{tf}$に変形しラプラシアンの解をモース関数の臨界点に局所化しモース関数の臨界点とラプラシアンの解を対応付ける手法である．ホッジ理論よりラプラシアンの解はドラームコホモロジーと対応するためWitten deformationにより臨界点とベッチ数の対応，つまりモース不等式を解析的に導くことができる．[4]では特異点を持つ空間へのWitten deformationの拡張がされているが，この結果をモース関数でなくMorse 1-formを用いた変形への拡張をしたい．さらに特異点が次元を持つ状況，とりわけ結び目補空間へWitten deformationを適用できるようにするつもりである．Witten deformationの顕著な応用にラプラシアンの固有値のゼータ関数から定義されるanalytic torsionとReidmeister torsionが等しくなるというCheeger-Mullerの定理の別証明がある．結び目空間でNovikov複体のReidemeister torsionを考える研究は[5]
+
+
+
+\noindent
+\textbf{研究手法}
+
+モース理論の核となる手法はモース関数の臨界点の指数と同じ次元のセルを用いたセル分割や臨界点を結ぶgrafient flowからチェイン複体を得る手法である．これらはMorse　Novikov理論においても似たような結果が存在する．これに加えWitten deformationを主体に境界付き多様体，特異点を持つ多様体への拡張を行いたい．
+
+\noindent
+\textbf{計画}
+
+closed 1-form $\omega$のゼロ点が$cat(M,[\omega])$未満ならhomoclinic cycleが存在するというFarberの結果をflowが境界にtangentな時に境界付き多様体へ拡張することができた．さらにNovikov複体を構成すること，Witten deformationによる解析学的なモース不等式の証明が修士課程の今から取り組みたい課題である．モース関数を使ったチェイン複体の構成はセル分割を与える方法とgrafient flowの本数を数える方法がある．この両アプローチからNovikov複体を作ることを試みたい．[4]でWitten deformationを特異点を持つ空間へ拡張しているが，この手法を勉強し応用したい．特異点が結び目になっているケース
+
+
+
+\noindent
+\textbf{独創性}
+
+flowがtangentな境界付き多様体のモース理論のclosed 1-formへの一般化へ言及している論文やプレプリントを申請者が調べる限り確認することができなかった．そのためこのテーマはまだ誰にもなされていないと考える．さらにNovikov複体のtorsionとWitten deformationの関連についても調べるということは新しいアイデアであると考えられる．境界付き多様体や結び目についての精緻な不変量や力学系の結果，調和積分論の拡張が得られると期待する．さらにこれらの有限次元の理論への深い洞察がインスタントンフレアーホモロジーなどでの新しい汎関数の発見につながると考えられる．
+
+	\vspace{1cm}
+	\begin{thebibliography}{99}
+		\bibitem{teramura} LI, TIEQIANG,TAN, Topology of Closed 1-Forms on Manifolds with Boundary
+		\bibitem{teramura} Maxim Braverman and Valentin Silantyev, Kirwan-Novikov inequalities on a manifold with boundary
+		\bibitem{teramura} Akaho manabu, MORSE HOMOLOGY AND MANIFOLDS WITH BOUNDARY
+		\bibitem{teramura} Ursula Ludwig, An Extension of a Theorem by Cheeger and Müller to Spaces with Isolated Conical Singularities,
+		\bibitem{teramura} Hiroshi GODA ,Andrei V. PAJITNOV ，Dynamics of gradient flows in the half-transversal Morse theory
+	\end{thebibliography}
+%end 研究目的と研究計画short留意事項なし ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\input{pieces/p02_purpose_plan_01}
+
+%#Split: 03_rights
+%#PieceName: p03_rights
+\input{pieces/p03_rights_00}
+\section{人権の保護及び法令等の遵守への対応}
+%　　　　＜＜最大　1ページ＞＞
+
+% s09_rights
+%begin 人権の保護及び法令等の遵守への対応 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+手続きが必要な研究は行わない予定である．
+
+%end 人権の保護及び法令等の遵守への対応 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\input{pieces/p03_rights_01}
+
+%#Split: 04_abilities
+%#PieceName: p04_abilities
+\input{pieces/p04_abilities_00}
+\section{研究遂行力の自己分析}
+%　　　　＜＜最大　2ページ＞＞
+
+% s14_abilities
+%begin 自己分析 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+%\DCPDInstructionsA\\% <-- 留意事項：これは消すか、コメントアウトしてください。
+
+\noindent
+\textbf{(1) 研究に関する自身の強み}
+%\DCPDInstructionsB% <-- 留意事項：これは消すか、コメントアウトしてください。
+
+
+
+
+\vspace{5mm}
+\noindent
+\textbf{(2) 今後研究者として更なる発展のため必要と考えている要素}
+
+
+
+
+
+%end 自己分析 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\input{pieces/p04_abilities_01}
+
+%#Split: 05_my_ambitions
+%#PieceName: p05_my_ambitions
+\input{pieces/p05_my_ambitions_00}
+\section{目指す研究者像等}
+%　　　　＜＜最大　1ページ＞＞
+
+% s17_my_ambitions
+\noindent
+\textbf{(1)目指す研究者像 {\footnotesize ※目指す研究者像に向けて身に付けるべき資質も含め記入してください。}}
+
+%begin 目指す研究者像 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+申請者は「\textbf{幾何の発展に貢献し続ける研究者}」を目指す．自分が魅入られた数学，特に微分幾何学で最先端の研究を行いたい．それだけでなく常に全力で好奇心を保ち研究生活を駆け抜けたい．申請者はそのような研究者になるために以下の能力を兼ね備えた研究者になりたいと考える．
+
+
+\noindent
+\textbf{1.深掘りする思考力}
+
+数学の最大の魅力は理論が抽象化されているが故の適応範囲の広さであると申請者は考える．数学が適応範囲が広い学問であるということは古くから科学の発展に数学が寄与してきたことが示している．抽象化されたインパクトの大きい理論を構築するためには現象の本質を抽出する能力が必要であり，透徹した理論に多く触れることで本質を見通す感覚を養われると申請者は考えている．
+
+
+\noindent
+\textbf{2.問題を解決する能力}
+
+本質を抽出する能力が問題の解決の糸口をみつけたりあらたな理論を構築するアイデアを見つけてくれるならば，そのアイデアを遂行する能力も必要である．自身が数学に造詣が深いことや計算力を身に着けることももちろん重要だが，とりわけ他人と協力し問題を解決する能力が求められると申請者は考える．他者とのコミュニケーション能力，プレゼン能力を高め自身が興味深いと感じるアイデアを生き生きと伝えられるようになりたい．
+
+
+\noindent
+\textbf{3.挑み続ける粘り強さ}
+
+長い期間全力で数学の研究を続けるためには．数学の技能に加え粘り強さが重要である．数学を好きで居続ける，情熱を燃やし続けることが大切である．チャレンジングな課題を見つけ続け，さまざまな分野の新しい知識に触れそして感動をする経験を多くするべきである．そのため数学の微分幾何学以外はもちろんその他の分野の学習も欠かさず，アンテナを張っておくことが大切と申請者は考えている．
+
+%end 目指す研究者像 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\vspace{5mm}
+\noindent
+\textbf{(2)上記の「目指す研究者像」に向けて、特別研究員の採用期間中に行う研究活動の位置づけ}
+
+
+%begin 研究活動の位置づけ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+本研究活動は上の３つの能力を向上してくれると申請者は考えている．以下に理由を述べる．
+
+
+\noindent\textbf{1. }80年代にNovikovにより生まれた本研究テーマはシンプルな拡張にもかかわらず広域な分野との繋がりがあり，また最先端の理論であるフレアーホモロジーの土台になっている．シンプルで応用が広いこの理論はモース理論の本質に深く迫る理論であり，無限次元のモース理論へのお手本を与えてくれる，数学のその他の分野に対しても見本になるような一般化の例に申請者は思えた．そのような理論に触れることが申請者が求める能力の１つ目を向上させるであろう．
+
+
+\noindent\textbf{2. }問題を解決する能力を高めるため，研究集会等に参加し個人の数学の技能を磨くことに加え本研究活動の間に得られた結果を積極的に発信していきたいと考えている．学会での発表や国内外の研究者との議論をたくさんこなし数学のアイデアを共有する経験を重ねたい．研究集会を重ね数学の楽しみを共有できる友人を増やすことができれば望外の喜びである．
+
+
+\noindent\textbf{3. }研究期間中にゲージ理論やシンプレクティック幾何学をはじめとした幅広いセミナーに参加することにより広い知識を獲得し刺激を得たい．またこの研究を通して数学以外の知見を得られる可能性がある．近年パーシステントホモロジーとよばれるトポロジーを用いたデータ解析の手法が工学で活発に研究されている．プロットされたデータの点集合を半径を持たせた円にかえその半径を動かした時の図形のトポロジーの変化からデータの複雑さを図る手法である．この手法はモース理論と深い関係があり，また最近Morse Novikov理論との関係も指摘されており，それは本研究テーマの適用範囲
+がとても広いことを表している．そのためMorse Novikov理論は数学，物理学やそれ以外の分野との関係が存在し，好奇心を強く満たしてくれるような魅力的な理論である．この研究が幅広い見識を与えてくれ好奇心を刺激してくれることは確実である．
+
+
+
+
+%end 研究活動の位置づけ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\input{pieces/p05_my_ambitions_01}
+
+%#Split: 99_tail
+\input{pieces/hook9} % pieces
+\end{document}
